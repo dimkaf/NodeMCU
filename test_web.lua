@@ -7,7 +7,6 @@ gpio.mode(led2, gpio.OUTPUT)
 srv=net.createServer(net.TCP)
 print("lunch web server")
 
-<<<<<<< HEAD
 local xml_req=nil
 local data_req = nil
 srv:listen(80, function(conn)
@@ -15,44 +14,26 @@ srv:listen(80, function(conn)
   -- parse request
   print(req)
   local response = {}
-=======
-srv:listen(80, function(conn)
-  conn:on("receive", function(sck, req)
-
-  -- parse request
-  print(req)
->>>>>>> origin/master
   local request=string.match(req,'GET ([%w/.]+) HTTP')
   if  request~= nil then
     print (request)
     request=nil
   
   -- show web page HTML5
-<<<<<<< HEAD
     response[#response + 1] = "HTTP/1.0 404 Not Found\r\nServer: ESP8266\r\n\r\n"
     local f = file.open("main.html","r")
     local f_len=0
-=======
-    local response = {}
-    response[#response + 1] = "HTTP/1.0 200 OK\r\nServer: NodeMCU on ESP8266\r\nContent-Type: text/html\r\n\r\n"
-    local f = file.open("main.html","r")
->>>>>>> origin/master
     if f ~= nil then
         repeat 
             local line=file.read(512)
             if line then 
                 response[#response + 1]=line
-<<<<<<< HEAD
                 f_len=f_len+string.len(line)
                 print(f_len) 
-=======
-                print("*") 
->>>>>>> origin/master
              end
          until not line    
          file.close()
          f=nil
-<<<<<<< HEAD
          response[1] = 'HTTP/1.0 200 OK\r\nServer: ESP8266\r\nContent-Type: text/html\r\nContent-Length: '..f_len..'\r\n\r\n'
      end
   else  -- not GET, check at POST form
@@ -83,10 +64,6 @@ srv:listen(80, function(conn)
      end
   end -- end of parse request
       -- send line and remove element from table
-=======
-     end
-     -- sends and removes the first element from the 'response' table
->>>>>>> origin/master
     local function send(sk)
       if #response > 0
         then sk:send(table.remove(response, 1))
@@ -98,12 +75,6 @@ srv:listen(80, function(conn)
     end
     -- triggers the send() function again once the first chunk of data was sent
     sck:on("sent", send)
-<<<<<<< HEAD
     send(sck)
-=======
-
-    send(sck)
-  end -- end of parse request
->>>>>>> origin/master
   end)
 end)
