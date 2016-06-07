@@ -9,6 +9,8 @@ print("lunch web server")
 
 local xml_req=nil
 local data_req = nil
+local def_page = "index.html"
+
 srv:listen(80, function(conn)
   conn:on("receive", function(sck, req)
   -- parse request
@@ -16,13 +18,14 @@ srv:listen(80, function(conn)
   local response = {}
   local request=string.match(req,'GET ([%w/.]+) HTTP')
   if  request~= nil then
-    print (request)
-    request=nil
+    if string.len(request)==1 then request=def_page else  request=string.sub(request,2) end
+    print ('file:'..request)
   
   -- show web page HTML5
     response[#response + 1] = "HTTP/1.0 404 Not Found\r\nServer: ESP8266\r\n\r\n"
-    local f = file.open("main.html","r")
+    local f = file.open(request,"r")
     local f_len=0
+    request=nil
     if f ~= nil then
         repeat 
             local line=file.read(512)
@@ -35,6 +38,9 @@ srv:listen(80, function(conn)
          file.close()
          f=nil
          response[1] = 'HTTP/1.0 200 OK\r\nServer: ESP8266\r\nContent-Type: text/html\r\nContent-Length: '..f_len..'\r\n\r\n'
+     else
+        print("file not found!")
+        print(response[1])
      end
   else  -- not GET, check at POST form
     request=string.match(req,'POST ([%w/.]+) HTTP')
