@@ -3,117 +3,59 @@
 <head>
 <title>SMART SENSOR</title>
 <style type="text/css">
-section
+section{ display: block;}
+.acd{
+  background-color: #99ccff;border: 2px solid #336699;width: 95%;height: 75%;padding: 10px;margin: 0 auto;border-radius: 9px;
+  -moz-border-radius: 9px; -o-border-radius: 9px; -webkit-border-radius: 9px;-moz-box-shadow:0 0 50px #555;-webkit-box-shadow:0 0 50px #555;box-shadow:0 0 50px #555;
+}
+.acd section{ border: 1px solid #539127;margin: 5px;background-color: #fff;}
+.acd h1, .acd p{ margin: 0;}
+.acd p{ padding: 5px;}
+.acd h1 a{ display: block;position: relative;font: 14px;padding: 8px;color: #333;text-decoration: none;}
+.acd h1 a:hover 
 {
-  display: block;
+  opacity: 0.75;background: -moz-linear-gradient(top, #6699ff, #336699);background: -o-linear-gradient(top, #6699ff, #336699); background: -ms-linear-gradient(top, #6699ff, #336699);
+  background: linear-gradient(top, #6699ff, #336699);background: -webkit-gradient(linear, left top, left bottom, from(#6699ff), to(#336699));
 }
-.accordion{
-  background-color: #99ccff;
-  border: 2px solid #336699;
-  width: 95%;
-  height: 75%;
-  padding: 10px;
-  margin: 0 auto;
-  border-radius: 9px;
-  -moz-border-radius: 9px;
-  -o-border-radius: 9px;
-  -webkit-border-radius: 9px;
-  -moz-box-shadow:0 0 50px #555;
-    -webkit-box-shadow:0 0 50px #555;
-    box-shadow:0 0 50px #555;
+.acd h1 + div {
+  height: 0;overflow: hidden; -moz-transition: height 0.7s ease-in-out; -webkit-transition: height 0.7s ease-in-out; -o-transition: height 0.7s ease-in-out; transition: height 0.7s ease-in-out;
 }
-.accordion section{
-  border: 1px solid #539127;
-  margin: 5px;
-  background-color: #fff;
+.acd :target h1 a:after {
+    content: ''; position: absolute;right: 40px;top: 50%;margin-top: -3px;border-top: 5px solid #333;border-left: 5px solid transparent;border-right: 5px solid transparent;     
 }
-.accordion h1, .accordion p{
-  margin: 0;
-}
-.accordion p{
-  padding: 5px;
-}
-.accordion h1 a{
-  display: block;
-  position: relative;
-  font: 14px;
-  padding: 8px;
-  color: #333;
-  text-decoration: none;
-}
-.accordion h1 a:hover 
-{
-  opacity: 0.75;
-  background: -moz-linear-gradient(top, #6699ff, #336699);
-  background: -o-linear-gradient(top, #6699ff, #336699); 
-  background: -ms-linear-gradient(top, #6699ff, #336699);  
-  background: linear-gradient(top, #6699ff, #336699);
-  background: -webkit-gradient(linear, left top, left bottom, from(#6699ff), to(#336699));
-}
-.accordion h1 + div {
-  height: 0;
-  overflow: hidden;
-  -moz-transition: height 0.7s ease-in-out;
-  -webkit-transition: height 0.7s ease-in-out;
-  -o-transition: height 0.7s ease-in-out;
-  transition: height 0.7s ease-in-out;
-
-}
-.accordion :target h1 a:after {
-    content: '';
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  margin-top: -3px;
-  border-top: 5px solid #333;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;     
-}
-.accordion :target h1 + div {
-  height: 75%;
-  border-top: 5px groove #99ccff;
-}
-.svg_h1 , span, b {
-	font-size: 32px;
-	color: #82caff;
-}
-
-.bh2 {
-    left: 50px;
-    font-style:inherit;
-    font-weight:bold;  
-}
+.acd :target h1 + div {height: 75%;border-top: 5px groove #99ccff;}
+.svg_h1 , span, b {font-size: 32px; color: #82caff;}
+.bh2 {left: 50px;font-style:inherit;font-weight:bold;}
 table {border-style: none;border-width: 0px;width: 100%;}
 td, th {vertical-align: bottom;text-align: center;}
 
-input[type=range] { -webkit-appearance: none;appearance: none;margin: 10px 0;width: 90%;height: 5%;border-radius: 10px;background: transparent;
-    cursor: pointer;box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;border: 1px solid #000000;}
-input[type=range]::-ms-fill-lower{background-color: transparent;color: transparent;}
-input[type=range]::-webkit-slider-thumb {box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;border: 0.6px solid #000000;height: 16px;width: 16px;
-    border-radius: 10px;background: #99ccff;cursor: pointer;-webkit-appearance: none;margin-top: -0.75px;}
+input[type=range] { -webkit-appearance: none;appearance: none;margin: -2.5px 0;width: 90%;height: 35px;background: transparent;cursor: pointer;border-radius: 35px;border: 1px solid #999999;
+min:0;max:100;step:1;value:50;}
+input[type=range]::-ms-fill-lower {background: transparent;}
+input[type=range]::-ms-thumb {box-shadow: 1px 1px 1px #999999, 0px 0px 1px #0d0d0d;border: 0.6px solid #999999;height: 30px;width: 30px;border-radius: 15px;background: #99ccff;cursor: pointer;-webkit-appearance: none;margin-top: -0.75px;}
+input[type=range]::-webkit-slider-thumb {box-shadow: 1px 1px 1px #999999, 0px 0px 1px #0d0d0d;border: 0.6px solid #999999;height: 30px;width: 30px;border-radius: 15px;background: #99ccff;cursor: pointer;-webkit-appearance: none;
+margin-top: -0.75px;}
 
 .sw {position: relative; width: 90px;-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;}
 .sw-ch {display: none;}
 .sw-label {display: block; overflow: hidden; cursor: pointer;border: 2px solid #999999; border-radius: 20px;}
 .sw-inner {display: block; width: 200%; margin-left: -100%;transition: margin 0.3s ease-in 0s;}
-.sw-inner:before, .sw-inner:after {display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;font-size: 14px; color: white;
-    font-family: Trebuchet, Arial, sans-serif; font-weight: bold;box-sizing: border-box;}
-.sw-inner:before {content: "ON";padding-left: 10px;background-color: #99ccff; color: #ffffff;}
+.sw-inner:before, .sw-inner:after {display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;font-size: 18px; color: white; font-weight: bold;box-sizing: border-box;}
+.sw-inner:before {content: "ON ";padding-left: 10px;background-color: #99ccff; color: #ffffff;text-align: left;}
 .sw-inner:after {content: "OFF";padding-right: 10px;background-color: #EEEEEE; color: #999999;text-align: right;}
-.sw-switch {display: block; width: 18px; margin: 6px;background: #ffffff;position: absolute; top: 0; bottom: 0;right: 56px;border: 2px solid #999999;
-    border-radius: 20px;transition: all 0.3s ease-in 0s;}
+.sw-switch {display: block; width: 18px; margin: 6px;background: #ffffff;position: absolute; top: 0; bottom: 0;right: 56px;border: 2px solid #999999;border-radius: 20px;transition: all 0.3s ease-in 0s;}
 .sw-ch:checked + .sw-label .sw-inner {margin-left: 0;}
 .sw-ch:checked + .sw-label .sw-switch {right: 0px;}
 
-select{border: 0 !important; -webkit-appearance: none; -moz-appearance: none;background: #99ccff no-repeat 90% center;width: 150px;text-indent: 0.01px;
-    text-overflow: "";color: #ffffff;border-radius: 20px;padding: 10px;box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);}
+select{border: 1px solid #999999; -webkit-appearance: none; -moz-appearance: none;background: #99ccff no-repeat 90% center;width: auto;text-indent: 0.01px;text-overflow: "";color: #ffffff;border-radius: 20px;padding: 10px;
+box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);}
 
 </style>
 </head>
 <body>
 <input type=hidden id=STATUS  value="0"/>
-<div class="main">
-    <div id="Log" class="accordion">
+<div>
+    <div id="Log" class="acd">
       <section id="log">
         <h1><a href="#log">
 			<svg id="L1" enable-background="new 0 0 100 100" viewBox="0 0 100 100" x="0px" y="0px" width="70px" height="40px" ><g id="IcoLog" fill="SkyBlue">
@@ -123,7 +65,7 @@ select{border: 0 !important; -webkit-appearance: none; -moz-appearance: none;bac
               <path d="M 46 40.706 v 16.693 c 0 2.209 1.791 4 4 4 s 4 -1.791 4 -4 V 40.706 c 0 -2.209 -1.791 -4 -4 -4 S 46 38.497 46 40.706 Z"></path>
               <circle cx="50" cy="68.471" r="4"/></g></svg>
             <span>LOG JSON</span></a></h1>
-      <div><TEXTAREA  id="LogBuf" NAME="Log" ROWS=10 COLS=69  title="To clear log list, use Double click of mouse ..." ondblclick="this.innerHTML='';" onclick="BlinkLog();"></TEXTAREA>
+      <div><TEXTAREA  id="LogBuf" NAME="Log" ROWS=10 COLS=69 style="width: 99%" ondblclick="this.innerHTML='';">To clear log list just double click, here...</TEXTAREA>
             <p></p>
         </div>
       </section>
@@ -143,21 +85,20 @@ select{border: 0 !important; -webkit-appearance: none; -moz-appearance: none;bac
           <span>SETTING</span></a></h1>
         <div>
          <table>
-            <tr><td><p><b>R </b><input id="sRed" type="range" style= "background: #ff0000;" min="0" max="100" step="any" value="50" onchange="PostXml(this.id);"/></p></td></tr>
-			<tr><td><p><b>G </b><input id="sGrn" type="range" style="background: #00ff00;" min="0" max="100" step="any" value="50" onchange="PostXml(this.id);"/></p></td></tr>
-			<tr><td><p><b>B </b><input id="sBlu" type="range" style="background: #0000ff;" min="0" max="100" step="any" value="50" onchange="PostXml(this.id);"/></p></td></tr>
+            <tr><td><p><b>R</b><input id="iRed" type="range" style="background: #ff0000;"onchange="ReqPost(this.id);"/></p></td></tr>
+			<tr><td><p><b>G</b><input id="iGrn" type="range" style="background: #00ff00;" onchange="ReqPost(this.id);"/></p></td></tr>
+			<tr><td><p><b>B</b><input id="iBlu" type="range" style="background: #0000ff;" onchange="ReqPost(this.id);"/></p></td></tr>
 		 </table>
 		 <table>
-			<tr><td><p><b>Color</b></p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="sClt" checked><label class="sw-label" for="sClt"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
-				<td><p><b>Back</b></p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="sBkl"><label class="sw-label" for="sBkl"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
-				<td><p><b>White</b></p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="sWhl"><label class="sw-label" for="sWhl"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
+			<tr><td><p><b>Color</b></p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="sClt" checked onchange="PostXml(this.id);">
+			<label class="sw-label" for="sClt"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
+			<td><p><b>Back</b></p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="sBkl" onchange="PostXml(this.id);">
+			<label class="sw-label" for="sBkl"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
+			<td><p><b>White</b></p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="sWhl" onchange="PostXml(this.id);">
+			<label class="sw-label" for="sWhl"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
 			</tr>
 		 </table>
-		 
-         </div>
-		 <div >
-			
-		</div>
+        </div>
       </section>
 	  <section id="gesture">
         <h1><a href="#gesture">
@@ -176,11 +117,11 @@ select{border: 0 !important; -webkit-appearance: none; -moz-appearance: none;bac
           <span>GESTURE</span></a></h1>
         <div>
          <table>
-            <tr><td><p><b>Sensitivity</b><input id="gSen" type="range"   min="1" max="100" step="any" value="10"  onchange="PostXml(this.id);"/></p></td>
-            <td><p><b>Await</b><input id="gEnd" type="range"  min="10" max="200" step="5" value="50"  onchange="PostXml(this.id);"/></p></td></tr>
-			<tr><td><select><option>- Move UP -</option><option>UP: Switch On</option><option>UP: Switch Off</option><option>UP: None</option></select></td>
-				<td><select><option>- Move HOOK-</option><option>HOOK: Switch On</option><option>HOOK: Switch Off</option><option>HOOK: None</option></select></td>
-				<td><select><option>- Move DN -</option><option>DN: Switch On</option><option>DN: Switch Off</option><option>DN: None</option></select></td>
+            <tr><td><p><b>Sensitivity</b><input id="iSen" type="range"   min="1" value="10"  onchange="ReqPost(this.id);"/></p></td>
+            <td><p><b>Await</b><input id="iEnd" type="range"  min="10" max="200" step="5" value="50"  onchange="ReqPost(this.id);"/></p></td></tr>
+			<tr><td><select id="sMup" onchange="PostXml(this.id);"><option value="0">UP: Switch Off</option><option value="1">UP: Switch On</option><option value="-1">UP: None</option></select></td>
+				<td><select id="sMhk" onchange="PostXml(this.id);"><option value="-1">HOOK: None</option><option value="1">HOOK: Switch On</option><option value="0">HOOK: Switch Off</option></select></td>
+				<td><select id="sMdn" onchange="PostXml(this.id);"><option value="1">DN: Switch On</option><option value="0">DN: Switch Off</option><option value="-1">DN: None</option></select></td>
 			</tr>
          </table>
          </div>
@@ -189,11 +130,12 @@ select{border: 0 !important; -webkit-appearance: none; -moz-appearance: none;bac
 </div>
 </body>
 <script type="text/javascript">
-    var HexData = Array.valueOf([]), HexIndex = HexData.length, HexReady = Boolean(true), HexError = Boolean(false), PressKey = 0, IdProc, DEBUG = Boolean(false), ServerIp = "http://192.168.4.1/post.cgi";
-    var ObjStrPsw = document.getElementById("StrPsw"), ObjPswKey = document.getElementById("PswKey"), Obj3 = document.getElementById('UploadKey'), Obj2 = document.getElementById('StrFileInfo'), Obj1 = document.getElementById("UploadProgress");
+    var Timer,TmpXml='{ "ID": "STATUS", "VALUE": "0" }', DEBUG = Boolean(false), ServerIp = location.host+"/post.cgi";
     if (DEBUG) ServerIp = "http://www.w3schools.com/ajax/demo_post.asp";
+	AddText("Connect: JSON service at " + ServerIp);
+	function ReqPost(idn) {clearTimeout(Timer);Timer=setTimeout(function(){ PostXml(idn);},500);} 
     function PostXml(Infocus) {
-        var xmlhttp, XmlStr = '{ "ID": "STATUS", "VALUE": "0" }', XmlObj = JSON.parse(XmlStr), Obj;
+        var xmlhttp,XmlStr =TmpXml,XmlObj = JSON.parse(XmlStr),Obj;
         if (Infocus) {
             XmlObj.ID = Infocus;
             Obj = document.getElementById(Infocus);
@@ -203,7 +145,7 @@ select{border: 0 !important; -webkit-appearance: none; -moz-appearance: none;bac
                 XmlObj.VALUE = Obj.value;
             }
         } else {
-            XmlObj = JSON.parse('{ "ID": "STATUS", "VALUE": "0" }');
+            XmlObj = JSON.parse(TmpXml);
         }
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
@@ -217,14 +159,14 @@ select{border: 0 !important; -webkit-appearance: none; -moz-appearance: none;bac
                     Obj.value = XmlObj.VALUE;
                 }
             }
-            if (xmlhttp.readyState == 4 && xmlhttp.status != 200) AddText("Error: No submit XML (" + xmlhttp.status + ")");
+            if (xmlhttp.readyState == 4 && xmlhttp.status != 200) AddText("Error: No submit of JSON(" + xmlhttp.status + ")");
         }
         xmlhttp.open("POST", ServerIp, true);
         XmlStr = JSON.stringify(XmlObj);
         xmlhttp.send(XmlStr);
     }	
     function GetXml(Infocus) {
-        var xmlhttp, Obj, XmlStr = '{ "ID": "STATUS"}' , XmlReqObj = JSON.parse(XmlStr);
+        var xmlhttp,Obj,XmlStr =TmpXml,XmlReqObj = JSON.parse(XmlStr);
         if (Infocus) XmlReqObj.ID = Infocus;
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
@@ -245,10 +187,9 @@ select{border: 0 !important; -webkit-appearance: none; -moz-appearance: none;bac
         XmlStatus = 0;
         xmlhttp.send(XmlStr);
     }
-    function BlinkLog() {
-        var Obj = document.getElementById("IcoLog");
-       Obj.setAttribute('fill', 'blue');
-       setTimeout(function () { document.getElementById("IcoLog").setAttribute('fill', 'skyblue') }, 5000);
-   }	
+	 function AddText(StrText) {
+        var PCday = new Date(); Obj = document.getElementById("LogBuf")
+        Obj.innerHTML = PCday.getHours() + ":" + PCday.getMinutes()+ ":" + PCday.getSeconds() + "." + PCday.getMilliseconds() + " " + StrText + "\r\n" + Obj.innerHTML;
+    }
 </script>
 </html>

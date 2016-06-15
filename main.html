@@ -1,170 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>SMART SENSOR</title>
-<style type="text/css">
-section
-{
-  display: block;
-}
-.accordion{
-  background-color: #99ccff;
-  border: 2px solid #336699;
-  width: 95%;
-  height: 75%;
-  padding: 10px;
-  margin: 0 auto;
-  border-radius: 9px;
-  -moz-border-radius: 9px;
-  -o-border-radius: 9px;
-  -webkit-border-radius: 9px;
-  -moz-box-shadow:0 0 50px #555;
-    -webkit-box-shadow:0 0 50px #555;
-    box-shadow:0 0 50px #555;
-}
-.accordion section{
-  border: 1px solid #539127;
-  margin: 5px;
-  background-color: #fff;
-}
-.accordion h1, .accordion p{
-  margin: 0;
-}
-.accordion p{
-  padding: 5px;
-}
-.accordion h1 a{
-  display: block;
-  position: relative;
-  font: 14px;
-  padding: 8px;
-  color: #333;
-  text-decoration: none;
-}
-.accordion h1 a:hover 
-{
-  opacity: 0.75;
-  background: -moz-linear-gradient(top, #6699ff, #336699);
-  background: -o-linear-gradient(top, #6699ff, #336699); 
-  background: -ms-linear-gradient(top, #6699ff, #336699);  
-  background: linear-gradient(top, #6699ff, #336699);
-  background: -webkit-gradient(linear, left top, left bottom, from(#6699ff), to(#336699));
-}
-.accordion h1 + div {
-  height: 0;
-  overflow: hidden;
-  -moz-transition: height 0.7s ease-in-out;
-  -webkit-transition: height 0.7s ease-in-out;
-  -o-transition: height 0.7s ease-in-out;
-  transition: height 0.7s ease-in-out;
-
-}
-.accordion :target h1 a:after {
-    content: '';
-  position: absolute;
-  right: 40px;
-  top: 50%;
-  margin-top: -3px;
-  border-top: 5px solid #333;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;     
-}
-.accordion :target h1 + div {
-  height: 75%;
-  border-top: 5px groove #99ccff;
-}
-.svg_h1 {
-	font-size: 32px;
-	color: #82caff;
-}
-
-.bh2 {
-    left: 50px;
-    font-style:inherit;
-    font-weight:bold;  
-}
-.tabx {
-     border-style: none;
-     border-width: 0px; 
-     width: 100%;
-    }
-</style>
-</head>
+<html><head><meta charset="utf-8"><title>Testing JSON</title>
+<style>
+input[type=range] { -webkit-appearance: none;appearance: none;margin: -2.5px 0;width: 90%;height: 35px;background: transparent;cursor: pointer;border-radius: 35px;border: 1px solid #999999;
+min:0;max:100;step:1;value:50;}
+input[type=range]::-ms-fill-lower {background: transparent;}
+input[type=range]::-ms-thumb {box-shadow: 1px 1px 1px #999999, 0px 0px 1px #0d0d0d;border: 0.6px solid #999999;height: 30px;width: 30px;border-radius: 15px;background: #99ccff;
+cursor: pointer;-webkit-appearance: none;margin-top: -0.75px;}
+input[type=range]::-webkit-slider-thumb {box-shadow: 1px 1px 1px #999999, 0px 0px 1px #0d0d0d;border: 0.6px solid #999999;height: 30px;width: 30px;border-radius: 15px;
+background: #99ccff;cursor: pointer;-webkit-appearance: none;
+margin-top: -0.75px;}
+</style></head>
 <body>
-<input type=hidden id=STATUS  value="0"/>
-<div class="main">
-    <div id="Log" class="accordion">
-      <section id="log">
-        <h1><a href="#log">
-			<svg id="Layer_1" enable-background="new 0 0 100 100" viewBox="0 0 100 100" x="0px" y="0px" width="70px" height="40px" ><g id="IcoLog" fill="SkyBlue">
-			  <path d="M 88.992 73.769 L 56.928 18.231 c -1.429 -2.475 -4.07 -4 -6.928 -4 s -5.498 1.525 -6.928 4 L 11.008 73.769 c -1.43 2.476 -1.43 5.524 0 8 
-			  c 1.429 2.476 4.07 4 6.928 4 h 64.129 c 2.857 0 5.499 -1.524 6.928 -4 C 90.422 79.293 90.422 76.244 88.992 73.769 Z M 17.936 77.769 L 50 22.231 l 32.064 55.537 H 17.936 Z" ></path>
-              <path d="M 46 40.706 v 16.693 c 0 2.209 1.791 4 4 4 s 4 -1.791 4 -4 V 40.706 c 0 -2.209 -1.791 -4 -4 -4 S 46 38.497 46 40.706 Z"></path>
-              <circle cx="50" cy="68.471" r="4"/>
-              </g>
-            </svg>
-            <span class=svg_h1>LOG JSON</span></a></h1>
-      <div><TEXTAREA  id="LogBuf" NAME="Log" ROWS=10 COLS=69  title="To clear log list, use Double click of mouse ..." ondblclick="this.innerHTML='';" onclick="BlinkLog();"></TEXTAREA>
-            <p></p>
-        </div>
-      </section>
-      <section id="setup">
-        <h1><a href="#setup">
-		  <svg id="Layer_2" enable-background="new 0 0 100 100" viewBox="0 0 100 100" x="0px" y="0px" width="70px" height="40px">
-          <g fill="SkyBlue">
-		  <path d="M68.198,21.628V8.146c0-2.369-1.919-4.295-4.288-4.295c-2.365,0-4.283,1.926-4.283,4.295v13.481 c-2.953,1.547-4.973,4.639-4.973,8.211c0,3.572,2.02,6.667,4.973,8.216v26.97c0,2.377,1.918,4.295,4.283,4.295
-				c2.369,0,4.288-1.918,4.288-4.295V38.053c2.954-1.549,4.972-4.644,4.972-8.215C73.17,26.267,71.152,23.176,68.198,21.628z 
-				M13.543,16.252V8.146c0-2.369-1.918-4.295-4.287-4.295c-2.365,0-4.283,1.926-4.283,4.295v8.105C2.019,17.8,0,20.896,0,24.467
-				c0,3.573,2.019,6.668,4.973,8.217v32.34c0,2.377,1.918,4.295,4.283,4.295c2.369,0,4.287-1.918,4.287-4.295V32.683 
-				c2.954-1.549,4.972-4.644,4.972-8.216C18.515,20.897,16.497,17.801,13.543,16.252z M41.309,36.673V8.146
-				c0-2.369-1.918-4.295-4.287-4.295c-2.366,0-4.288,1.926-4.288,4.295v28.528c-2.952,1.549-4.969,4.644-4.969,8.215 
-				c0,3.569,2.017,6.66,4.969,8.208v11.927c0,2.377,1.922,4.295,4.288,4.295c2.369,0,4.287-1.918,4.287-4.295V53.098
-				c2.953-1.547,4.971-4.64,4.971-8.209C46.279,41.317,44.264,38.222,41.309,36.673z"/>
-			</g>
-          </svg>
-          <span class=svg_h1>SETTING</span></a></h1>
-        <div>
-         <table class=tabx>
-            <tr><td><p><b>Sensitivity</b>&nbsp;&nbsp;Low<input id="intAlarmSense" type="range"   style="max-width: 40px;" min="0" max="2" step="1" value="1"  onchange="PostXml(this.id);"/>Hi</p></td>
-            <td><p><b>Alarm counter</b>&nbsp;&nbsp;1<input id="intAlarmCount" type="range"  style="max-width: 200px; max-height: 7px" min="1" max="100" step="1" value="50"  onchange="PostXml(this.id);"/>100</p></td>
-            </tr>
-         </table>
-         </div>
-      </section>
-	  <section id="gesture">
-        <h1><a href="#gesture">
-		  <svg id="Layer_3" enable-background="new 0 0 10 10" viewBox="0 0 500 500" x="0px" y="0px" width="70px" height="40px">
-          <g fill="SkyBlue">
-				<path d="M441.017,210.375c-11.475,0-21.037,3.825-28.688,9.562v-153c0-26.775-21.037-47.812-47.812-47.812 
-				c-11.475,0-22.951,3.825-32.514,11.475C324.354,11.475,307.142,0,288.017,0c-21.038,0-38.25,13.388-43.988,30.6
-				c-7.65-7.65-19.125-11.475-32.513-11.475c-26.775,0-47.812,21.038-47.812,47.812V237.15c-38.25-34.425-80.325-61.2-107.1-34.425 
-				c-38.25,38.25,42.075,112.837,103.275,225.675c43.988,78.412,105.188,107.1,166.388,107.1c89.887,0,162.562-72.675,162.562-162.562
-				v-114.75C488.829,231.413,467.792,210.375,441.017,210.375z M469.704,300.263v72.675c0,78.412-65.025,143.438-143.438,143.438 
-				c-72.675,0-114.75-40.162-149.175-95.625c-74.588-126.225-128.138-183.6-107.1-204.638c21.038-21.037,72.675,24.863,112.837,66.938
-				V66.938c0-15.3,13.388-28.688,28.688-28.688s28.688,13.388,28.688,28.688V267.75h19.125V47.812c0-15.3,13.387-28.688,28.688-28.688 
-				c15.299,0,28.688,13.388,28.688,28.688v200.812V420.75l-61.201-61.2l-15.3,13.388L326.267,459l86.062-86.062l-15.301-15.3
-				l-61.199,63.112V248.625V66.938c0-15.3,13.387-28.688,28.688-28.688c15.299,0,28.688,13.388,28.688,28.688V267.75h19.125v-9.562 
-				c0-15.3,13.387-28.688,28.688-28.688c15.299,0,28.688,13.388,28.688,28.688V300.263z"/>
-		</g>
-          </svg>
-          <span class=svg_h1>GESTURE</span></a></h1>
-        <div>
-         <table class=tabx>
-            <tr><td><p><b>Sensitivity</b>&nbsp;&nbsp;Low<input id="intAlarmSense" type="range"   style="max-width: 40px;" min="0" max="2" step="1" value="1"  onchange="PostXml(this.id);"/>Hi</p></td>
-            <td><p><b>Alarm counter</b>&nbsp;&nbsp;1<input id="intAlarmCount" type="range"  style="max-width: 200px; max-height: 7px" min="1" max="100" step="1" value="50"  onchange="PostXml(this.id);"/>100</p></td>
-            </tr>
-         </table>
-         </div>
-      </section>
-    </div>
+<div>
+	<p><b>Rx</b><input  id="sRed" type="range"  style="background: red;" min="0" max="100" step="1" value="50" onchange="ReqPost(this.id);" />
+	</p>
+</div>
+<div><TEXTAREA  id="LogTxt" NAME="Log" ROWS=10 COLS=69 style="width: 90%; height: 250px;" ondblclick="this.innerHTML='';" >To clear log list just double click, here...</TEXTAREA>
+      <p></p>
 </div>
 </body>
 <script type="text/javascript">
-    var HexData = Array.valueOf([]), HexIndex = HexData.length, HexReady = Boolean(true), HexError = Boolean(false), PressKey = 0, IdProc, DEBUG = Boolean(true), ServerIp = "http://192.168.4.1/post.cgi";
-    var ObjStrPsw = document.getElementById("StrPsw"), ObjPswKey = document.getElementById("PswKey"), Obj3 = document.getElementById('UploadKey'), Obj2 = document.getElementById('StrFileInfo'), Obj1 = document.getElementById("UploadProgress");
-    if (DEBUG) ServerIp = "http://www.w3schools.com/ajax/demo_post.asp";
+    var Timer,TmpXml='{ "ID": "STATUS", "VALUE": "0" }', DEBUG = Boolean(false), ServerIp = location.host+"/post.cgi";
+    AddText(ServerIp);
+	if (DEBUG) ServerIp = "http://www.w3schools.com/ajax/demo_post.asp";
+	function ReqPost(idn) {clearTimeout(Timer);Timer=setTimeout(function(){ PostXml(idn);},1000);} 
     function PostXml(Infocus) {
-        var xmlhttp, XmlStr = '{ "ID": "STATUS", "VALUE": "0" }', XmlObj = JSON.parse(XmlStr), Obj;
+        var xmlhttp,XmlStr =TmpXml,XmlObj = JSON.parse(XmlStr),Obj;
         if (Infocus) {
             XmlObj.ID = Infocus;
             Obj = document.getElementById(Infocus);
@@ -174,12 +35,13 @@ section
                 XmlObj.VALUE = Obj.value;
             }
         } else {
-            XmlObj = JSON.parse('{ "ID": "STATUS", "VALUE": "0" }');
+            XmlObj = JSON.parse(TmpXml);
         }
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                if (DEBUG) XmlObj = JSON.parse(XmlStr);
+                AddText("Receive:"+xmlhttp.responseText);
+				if (DEBUG) XmlObj = JSON.parse(XmlStr);
                 if (!DEBUG) XmlObj = JSON.parse(xmlhttp.responseText);
                 Obj = document.getElementById(XmlObj.ID);
                 if (Obj.type == 'radio' || Obj.type == 'checkbox') {
@@ -188,14 +50,15 @@ section
                     Obj.value = XmlObj.VALUE;
                 }
             }
-            if (xmlhttp.readyState == 4 && xmlhttp.status != 200) AddText("Error: No submit XML (" + xmlhttp.status + ")");
+            if (xmlhttp.readyState == 4 && xmlhttp.status != 200) alert("Error: No submit (" + xmlhttp.status + ")");
         }
         xmlhttp.open("POST", ServerIp, true);
         XmlStr = JSON.stringify(XmlObj);
         xmlhttp.send(XmlStr);
+		AddText('Send: "'+XmlStr+' to '+ServerIp);
     }	
     function GetXml(Infocus) {
-        var xmlhttp, Obj, XmlStr = '{ "ID": "STATUS"}' , XmlReqObj = JSON.parse(XmlStr);
+        var xmlhttp,Obj,XmlStr =TmpXml,XmlReqObj = JSON.parse(XmlStr);
         if (Infocus) XmlReqObj.ID = Infocus;
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
@@ -216,10 +79,11 @@ section
         XmlStatus = 0;
         xmlhttp.send(XmlStr);
     }
-    function BlinkLog() {
-        var Obj = document.getElementById("IcoLog");
-       Obj.setAttribute('fill', 'blue');
-       setTimeout(function () { document.getElementById("IcoLog").setAttribute('fill', 'skyblue') }, 5000);
-   }	
+	 function AddText(StrText) {
+        var PCday = new Date(); Obj = document.getElementById("LogTxt")
+        Obj.innerHTML = PCday.getHours() + ":" + PCday.getMinutes()+ ":" + PCday.getSeconds() + "." + PCday.getMilliseconds() + " " + StrText + "\r\n" + Obj.innerHTML;
+    }
+	
+    	
 </script>
 </html>
