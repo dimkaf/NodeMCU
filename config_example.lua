@@ -13,9 +13,9 @@ Variables = {iRed=50, iBlu=50, iGrn=50, bClt=true, bBkl=false, bWht=false,
             sSid="SSID-ESP", sPsw="ESP-2222" , sAut=0}
 require("config")            
 --save data to file
-    SaveConfig('setup.ini',Variables)
+    Config.Save('setup.ini',Variables)
  --chage variable to show different when data will load from file
     Variables['sPsw']="ESP-3210"
     print(Variables['sPsw'])
-if LoadConfig('setup.ini',Variables)==true then print ('load data in sucsess!') end
+if Config.Load('setup.ini',Variables)==true then print ('load data in success!') end
     print(Variables['sPsw'])
