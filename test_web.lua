@@ -1,3 +1,8 @@
+MyData = {Task="",iRed=64, iBlu=64, iGrn=64, iClr=1, bClr=true, iNgl=512, bNgl=true, iWht=512, bWht=true,
+            iSfl=512, bSfl=true, bNfd=false, iNtm=3600,
+            iMup=0, iMhk=-1, iMdn=1, iEnd=50, iSen=10,
+            sSid="SSID-ESP", sPsw="ESP-2222" , sAut=0}
+
 node.setcpufreq(node.CPU80MHZ)
 cfg={}
 cfg.ssid="ESP-"..node.chipid()
@@ -7,28 +12,46 @@ wifi.ap.config(cfg)
 wifi.setmode(wifi.STATIONAP)
 --wifi.setphymode(wifi.PHYMODE_G)
 
-led1 = 6
-led2 = 7
-gpio.mode(led1, gpio.OUTPUT)
-gpio.mode(led2, gpio.OUTPUT)
+Led_G = 6
+Led_B = 7
+Led_R = 8
+pwm.setup(Led_R, 500, 50)
+pwm.setup(Led_G, 500, 50)
+pwm.setup(Led_B, 500, 50)
+pwm.start(Led_R)
+pwm.start(Led_G)
+pwm.start(Led_B)
+
+tmr.register(0, 1000, tmr.ALARM_AUTO, function() 
+     if MyData.Task ~= nil then
+        --check in
+        pwm.setduty(Led_R,(MyData.iRed*MyData.iClr))
+        pwm.setduty(Led_G,(MyData.iGrn*MyData.iClr))
+        pwm.setduty(Led_B,(MyData.iBlu*MyData.iClr))
+        
+        MyData.Task = nil
+     end
+end)
+
+tmr.start(0)
 srv=net.createServer(net.TCP)
---rtctime.set(0, 0) -- set time to initial date, just for measure inervals
---local t_sec,t_us =rtctime.get();
+require("config")
+
 local xml_req=nil
 local data_req = nil
 local def_page = "index.html"
+
 
 print("lunch web server...")
 
 srv:listen(80, function(conn)
   conn:on("receive", function(sck, req)
   -- parse request
-  --t_sec,t_us =rtctime.get();
- -- print('------------HTTP ('..t_sec..t_us..')------------------------')
   print(req)
   print('----------------------------------------------')
   local response = {}
   local request=string.match(req,'GET ([%w/.]+) HTTP')
+  local header='HTTP/1.0 200 OK\r\nServer: ESP8266\r\nContent-Type: text/html\r\nContent-Length: '
   if  request~= nil then
     if string.len(request)==1 then request=def_page else  request=string.sub(request,2) end
     print ('file:'..request)
@@ -49,7 +72,7 @@ srv:listen(80, function(conn)
          until not line    
          file.close()
          f=nil
-         response[1] = 'HTTP/1.0 200 OK\r\nServer: ESP8266\r\nContent-Type: text/html\r\nContent-Length: '..f_len..'\r\n\r\n'
+         response[1] = header..f_len..'\r\n\r\n'
      else
         print("file not found!")
         print(response[1])
@@ -81,11 +104,10 @@ srv:listen(80, function(conn)
                     xml_data=req 
                     if xml_req==0 then -- complete json
                         response ={}
-                        response[1] = 'HTTP/1.0 200 OK\r\nServer: ESP8266\r\nContent-Type: text/html\r\nContent-Length: '..string.len(xml_data)..'\r\n\r\n'
+                        response[1] = header..string.len(xml_data)..'\r\n\r\n'
                         response[1]=response[1]..xml_data
-                        t = cjson.decode(xml_data)
-                        print('send json='..xml_data)
-                        for k,v in pairs(t) do print(k,v) end
+                         Config.Xml(xml_data,MyData)
+                         MyData.Task="x"
                         xml_data=nil
                     end
                 end
@@ -98,11 +120,10 @@ srv:listen(80, function(conn)
             xml_req=xml_req-string.len(req)
             if xml_data==nil then xml_data=req else  xml_data=xml_data..req end 
             if xml_req==0 then -- complete json
-                response[1] = 'HTTP/1.0 200 OK\r\nServer: ESP8266\r\nContent-Type: text/html\r\nContent-Length: '..string.len(xml_data)..'\r\n\r\n'
+                response[1] = header..string.len(xml_data)..'\r\n\r\n'
                 response[1]=response[1]..xml_data
-                t = cjson.decode(xml_data)
-                print('send json='..xml_data)
-                for k,v in pairs(t) do print(k,v) end
+                Config.Xml(xml_data,MyData)
+                 MyData.Task="x"
                 xml_data=nil
             end
         end
@@ -116,9 +137,6 @@ srv:listen(80, function(conn)
         else
             sk:close()
 		    response = nil
-           -- local m_sec,m_us =rtctime.get();
-            --m_sec=m_sec-t_sec;print ('Spend time (Sec.):'..m_sec);
-           -- m_sec=nil;m_us=nil;
             collectgarbage()
         end
       end
