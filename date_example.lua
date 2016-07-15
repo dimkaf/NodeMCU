@@ -5,6 +5,8 @@ local xx,dd,mm,yy,hh,mn,ss,sc
 local wd={"Sun","Mon","Tue","Wed","Thu","Fri","Sat"};
 sc=1468252705; --Mon Jul 11 2016 18:58:25 GMT+0300 (RTZ 2 ,winter)
 
+require("date")
+
 hh,mn,ss =Date.GetTime (sc,3) -- calculate time stamp for GMT+0300
 dd,mm,yy =Date.GetDate(sc) -- calculate data time stamp
 xx =wd[1+Date.GetDay(sc)] -- define day of week
