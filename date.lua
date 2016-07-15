@@ -5,7 +5,6 @@
 -- varables: 
 -- sec= data value in seconds (by default take internal RTC time)
 -- gmt= local offset of time in hours (by default=0)
-
 Date = {}
 function Date.GetTime (sec,gmt)
     local dSec,dHours,dMinutes
@@ -26,11 +25,11 @@ end
 function Date.GetDate (sec)
     local dDays,dYear,dMonth,dDate,dYl
     if sec ==nil then sec,_ = rtctime.get() end  
-    dYear,dDays =GetYear(sec)
+    dYear,dDays =Date.GetYear(sec)
     if dDays>58 then
-        if LapYear(dYear)==false then dDays=dDays+1 end
+        if Date.LapYear(dYear)==false then dDays=dDays+1 end
         if dDays<60 then 
-            if LapYear(dYear)==true then dMonth=2;dDate=29; end
+            if Date.LapYear(dYear)==true then dMonth=2;dDate=29; end
         elseif dDays<91 then dMonth=3;dDate=dDays-59;
         elseif dDays<121 then dMonth=4;dDate=dDays-90;
         elseif dDays<152 then dMonth=5;dDate=dDays-120;
