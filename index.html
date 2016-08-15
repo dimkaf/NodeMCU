@@ -1,179 +1,145 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>SMART SENSOR</title>
+<head><link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+DAP8AAAAAAAAAAAAAAAAAAAAA/4MA/wAAAAAAAAAAAAAAAAAAAAD/gwD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/
+4MA/wAAAAAAAAAA/4MA//+DAP//gwD/AAAAAAAAAAD/gwD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+DAP//gwD//4MA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+DAP8AAAAAAAAAAAAAAAD/gwD/AAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAD/gwD//4MA/wAAAAD/gwD/AAAAAAAAAAAAAAAA/4MA/wAAAAD/gwD//4MA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/4MA/wAAAAAAAAAAAAAAAP+DAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/gwD/AAAAAAAAAAD/gwD//4MA//+DA
+P8AAAAAAAAAAP+DAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/gwD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/4MA/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/4MA//+DAP//g
+wD//4MA/wAAAAD/gwD//4MA//+DAP8AAAAAAAAAAP+DAP8AAAAAAAAAAAAAAAAAAAAAAAAAAP+DAP8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/4MA/wAAAAD/gwD/AAAAAAAAAAAAAAAAAAAAAAAAAAD/gwD/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP+DAP8AAAAA/4MA/wAAAAAAAAAAA
+AAAAAAAAAAAAAAA/4MA//+DAP//gwD/AAAAAAAAAAAAAAAAAAAAAP+DAP8AAAAAAAAAAP+DAP//gwD//4MA/wAAAAAAAAAAAAAAAP+DAP8AAAAAAAAAAAAAAAAAAAAAAAAAAP+DAP8AAAAAAAAAAAAAAAD/gwD/AAAAAAAAAAD/gwD/AAAAAAAAAAD/gwD/AAAAAAAAAAAAAAAAAAAAAAAAAAD/gwD/AAAAA
+AAAAAAAAAAA/4MA/wAAAAAAAAAA/4MA/wAAAAAAAAAA/4MA//+DAP//gwD//4MA/wAAAAAAAAAAAAAAAP+DAP//gwD/AAAAAP+DAP//gwD//4MA/wAAAAAAAAAA3vcAAOxvAAD8fwAA+78AAMunAAD7vwAA7G8AAN/3AAD//wAAhG8AAL+vAAC/rwAAj2MAAL7tAAC+7QAAhyMAAA==" rel="icon" 
+type="image/x-icon"><title>SMART SENSOR</title>
 <style type="text/css">
 section{ display: block;}
-.acd{
-  background-color: #99ccff;border: 2px solid #336699;width: 95%;height: 75%;padding: 10px;margin: 0 auto;border-radius: 9px;
-  -moz-border-radius: 9px; -o-border-radius: 9px; -webkit-border-radius: 9px;-moz-box-shadow:0 0 50px #555;-webkit-box-shadow:0 0 50px #555;box-shadow:0 0 50px #555;
-}
+.acd{background-color: #99ccff;border: 2px solid #336699;width: 95%;height: 75%;padding: 10px;margin: 0 auto;border-radius: 9px;
+  -moz-border-radius: 9px; -o-border-radius: 9px; -webkit-border-radius: 9px;-moz-box-shadow:0 0 50px #555;-webkit-box-shadow:0 0 50px #555;box-shadow:0 0 50px #555;}
 .acd section{ border: 1px solid #539127;margin: 5px;background-color: #fff;}
 .acd h1, .acd p{ margin: 0;}
 .acd p{ padding: 5px;}
 .acd h1 a{ display: block;position: relative;font: 14px;padding: 8px;color: #333;text-decoration: none;}
-.acd h1 a:hover 
-{
-  opacity: 0.75;background: -moz-linear-gradient(top, #6699ff, #336699);background: -o-linear-gradient(top, #6699ff, #336699); background: -ms-linear-gradient(top, #6699ff, #336699);
-  background: linear-gradient(top, #6699ff, #336699);background: -webkit-gradient(linear, left top, left bottom, from(#6699ff), to(#336699));
-}
-.acd h1 + div {
-  height: 0;overflow: hidden; -moz-transition: height 0.7s ease-in-out; -webkit-transition: height 0.7s ease-in-out; -o-transition: height 0.7s ease-in-out; transition: height 0.7s ease-in-out;
-}
-.acd :target h1 a:after {
-    content: ''; position: absolute;right: 40px;top: 50%;margin-top: -3px;border-top: 5px solid #333;border-left: 5px solid transparent;border-right: 5px solid transparent;     
-}
-.acd :target h1 + div {height: 75%;border-top: 5px groove #99ccff;}
-.svg_h1 , span, b {font-size: 32px; color: #82caff;}
-.bh2 {left: 50px;font-style:inherit;font-weight:bold;}
+.acd h1 a:hover {opacity: 0.5;background: -moz-linear-gradient(top, #6699ff, #336699);background: -o-linear-gradient(top, #6699ff, #336699); background: -ms-linear-gradient(top, #6699ff, #336699);
+  background: linear-gradient(top, #6699ff, #336699);background: -webkit-gradient(linear, left top, left bottom, from(#6699ff), to(#336699));transition: all 1s; -moz-transition: all 1s;-webkit-transition: all 1s;
+  -o-transition:all 1s;}
+.acd h1 + div { height: 0;overflow: hidden; -moz-transition: height 3s ease-in-out; -webkit-transition: height 3s ease-in-out; -o-transition: height 3s ease-in-out; transition: height 3s ease-in-out;}
+.acd :target h1 a:after {content: ''; position: absolute;right: 40px;top: 50%;margin-top: -3px;border-top: 5px solid #333;border-left: 5px solid transparent;border-right: 5px solid transparent;}
+.acd :target h1 + div {height: 850px;border-top: 5px groove #99ccff;}
+span, b {font-size: 32px; color: #82caff;}
 table {border-style: none;border-width: 0px;width: 100%;}
 td, th {vertical-align: bottom;text-align: center;}
-
-input[type=range] { -webkit-appearance: none;appearance: none;margin: -2.5px 0;width: 90%;height: 35px;background: transparent;cursor: pointer;border-radius: 35px;border: 1px solid #999999;
-min:0;max:127;step:1;value:64;}
+input[type=text],input[type=password] { -webkit-appearance: none;appearance: none;margin: -2.5px 0;width:75%; height: 35px;border-radius: 15px;background: #99ccff;padding-left: 10px;font-size: 32px;maxlength:15}
+input[type=range] { -webkit-appearance: none;appearance: none;margin: -2.5px 0;width: 90%;height: 35px;background: transparent;cursor: pointer;border-radius: 35px;border: 1px solid #999999;min:0;max:127;step:1;value:64;}
 input[type=range]::-ms-fill-lower {background: transparent;}
 input[type=range]::-ms-thumb {box-shadow: 1px 1px 1px #999999, 0px 0px 1px #0d0d0d;border: 0.6px solid #999999;height: 30px;width: 30px;border-radius: 15px;background: #99ccff;cursor: pointer;-webkit-appearance: none;margin-top: -0.75px;}
 input[type=range]::-webkit-slider-thumb {box-shadow: 1px 1px 1px #999999, 0px 0px 1px #0d0d0d;border: 0.6px solid #999999;height: 30px;width: 30px;border-radius: 15px;background: #99ccff;cursor: pointer;-webkit-appearance: none;
 margin-top: -0.75px;}
-
 .sw {position: relative; width: 90px;-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;}
 .sw-ch {display: none;}
-.sw-label {display: block; overflow: hidden; cursor: pointer;border: 2px solid #999999; border-radius: 20px;}
-.sw-inner {display: block; width: 200%; margin-left: -100%;transition: margin 0.3s ease-in 0s;}
-.sw-inner:before, .sw-inner:after {display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;font-size: 18px; color: white; font-weight: bold;box-sizing: border-box;}
-.sw-inner:before {content: "ON ";padding-left: 10px;background-color: #99ccff; color: #ffffff;text-align: left;}
-.sw-inner:after {content: "OFF";padding-right: 10px;background-color: #EEEEEE; color: #999999;text-align: right;}
+.sw-lb {display: block; overflow: hidden; cursor: pointer;border: 2px solid #999999; border-radius: 20px;}
+.sw-in {display: block; width: 200%; margin-left: -100%;transition: margin 0.3s ease-in 0s;}
+.sw-in:before, .sw-in:after {display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;font-size: 18px; color: white; font-weight: bold;box-sizing: border-box;}
+.sw-in:before {content: "ON ";padding-left: 10px;background-color: #99ccff; color: #ffffff;text-align: left;}
+.sw-in:after {content: "OFF";padding-right: 10px;background-color: #EEEEEE; color: #999999;text-align: right;}
 .sw-switch {display: block; width: 18px; margin: 6px;background: #ffffff;position: absolute; top: 0; bottom: 0;right: 56px;border: 2px solid #999999;border-radius: 20px;transition: all 0.3s ease-in 0s;}
-.sw-ch:checked + .sw-label .sw-inner {margin-left: 0;}
-.sw-ch:checked + .sw-label .sw-switch {right: 0px;}
-
+.sw-ch:checked + .sw-lb .sw-in {margin-left: 0;}
+.sw-ch:checked + .sw-lb .sw-switch {right: 0px;}
 select{border: 1px solid #999999; -webkit-appearance: none; -moz-appearance: none;background: #99ccff no-repeat 90% center;width: auto;text-indent: 0.01px;text-overflow: "";color: #ffffff;border-radius: 20px;padding: 10px;
 box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);}
-
+svg {enable-background: new 0 0 100 100;x:0px;y:0px;width:70px;height:40px;}
+svg g {fill: SkyBlue;}
+.sst{display:table-cell;}
+.sap{display:none;}
 </style>
 </head>
 <body>
 <input type=hidden id=STATUS  value="0"/>
 <div>
-    <div id="Log" class="acd">
-      <section id="wifi">
-        <h1><a href="#wifi">
-			<svg id="L1" enable-background="new 0 0 100 100" viewBox="0 0 400 400" x="0px" y="0px" width="70px" height="40px" ><g id="IcoLog" fill="SkyBlue">
-			 <path " d="M331,174c-30-19-66-30-103-30 c-37,0-73,10-103,30c-29,19-52,46-63,77c-2,6,1,13,7,15c6,2,13-1,15-7c20-54,77-91,143-91c66,0,124,36,143,91 c2,5,6,8,11,8c1-0,3-0,4-1c6-2,9-9,7-15 C383,220,361,193,331,174z"/>
-		     <path " d="M291,236c-17-14-39-21-63-21 c-23,0-46,8-63,21c-17,14-28,33-30,54c-1,7,4,12,11,13c0,0,1,0,1,0c6,0,11-5,12-11c3-30,33-54,69-54 c36,0,66,24,69,54c1,7,6,11,13,11c7-1,11-6,11-13 C319,270,308,250,291,236z"/>
-		    <path " d="M228,280c-25,0-46,21-46,46c0,25,21,46,46,46 c25,0,46-21,46-46C274,300,253,280,228,280z M228,348c-12,0-22-10-22-22c0-12,10-22,22-22c12,0,22,10,22,22 C250,338,240,348,228,348z"/></g>
-			</svg>
-          <span>Wi-Fi</span></a></h1>
-      <div>
-	   <table>
-		<tr><td>SSID</td><td><input id=sSid type=text  maxlength=15 onchange ="PostXml(this.id);" /></td><td/><td width=50%></td></tr>
-		<tr><td>Password</td><td><input id=sPsw type=password maxlength=15 onchange ="PostXml(this.id);" /></td><td></td><td></td></tr>
-		<tr><td><b>Mode</b></td><td><b>PHY</b></td><td><b>Sleep</b></td><td><b>Log</b></td></tr>
-		<tr><td><select id="iMod" onchange="PostXml(this.id);"><option value="1">STATION</option><option value="2">SOFT AP</option><option value="3">STATION AP</option></select></td>
-			<td><select id="iPhy" onchange="PostXml(this.id);"><option value="1">802.11b</option><option value="2">802.11g</option><option value="3">802.11n</option></select></td>
-			<td><select id="iSlp" onchange="PostXml(this.id);"><option value="0">DISSABLE</option><option value="1">SAVE POWER</option><option value="2">STANDBY</option></select></td>
-			<td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="SW1" checked onchange='OnOff(this.id,"STATUS","T0");'>
-			<label class="sw-label" for="SW1"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td></tr>
-	   </table>
-	   <br></br>
-	   <table id="T0"><tr><td>
-		<TEXTAREA  id="LogBuf" NAME="Log" ROWS=10 COLS=69 style="width: 99%" ondblclick="this.innerHTML='';">To clear log list just double click, here...</TEXTAREA>
-        </td></tr></table>
-        </div>
-      </section>
-      <section id="setup">
-        <h1><a href="#setup">
-		  <svg id="L2" enable-background="new 0 0 100 100" viewBox="0 0 75 75" x="0px" y="0px" width="70px" height="40px"><g fill="SkyBlue" >
-    		  <path d="M68,22V8c0-2-2-4-4-4c-2,0-4,2-4,4v13 c-3,1-5,5-5,8c0,4,2,7,5,8v27c0,2,2,4,4,4 c2,0,4-2,4-4V38c3-1,5-5,5-8C73,26,71,23,68,22z M13,16V8c0-2-2-4-4-4c-2,0-4,2-4,4v8C2,18,0,21,0,24 c0,4,2,7,5,8v32c0,2,2,4,4,4
-			  c2,0,4-2,4-4V33c3-1,5-5,5-8C18,21,16,18,13,16z M41,37V8c0-2-2-4-4-4c-2,0-4,2-4,4v28c-3,1-5,5-5,8 c0,4,2,7,5,8v12c0,2,2,4,4,4c2,0,4-2,4-4V53 c3-1,5-5,5-8C46,41,44,38,41,37z"/></g>
-		</svg>
-          <span>SETTING</span></a></h1>
-        <div>
-		<table>
-            <tr><td><p><b>Color</b>&nbsp;</p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="bClr" checked onchange='OnOff(this.id,"iClr","T1");PostXml(this.id);'>
-			<label class="sw-label" for="bClr"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
-			<td width="90%"><input id="iClr" type="range" min="1" max="8" step="1" value="1" onchange="ReqPost(this.id,250);"/></td></tr>
-		</table>		
-         <table id="T1">
-            <tr><td><p><b>R</b><input id="iRed" type="range" style="background: #ff0000;"onchange="ReqPost(this.id,250);"/></p></td></tr>
-			<tr><td><p><b>G</b><input id="iGrn" type="range" style="background: #00ff00;" onchange="ReqPost(this.id,250);"/></p></td></tr>
-			<tr><td><p><b>B</b><input id="iBlu" type="range" style="background: #0000ff;" onchange="ReqPost(this.id,250);"/></p></td></tr>
-		 </table>
-		 <br></br>
-		 <table>
-            <tr><td><p><b>White</b></p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="bWht" checked onchange='OnOff(this.id,"iWht");PostXml(this.id);'>
-			<label class="sw-label" for="bWht"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
-			<td width="90%"><input id="iWht" type="range" min="1" max="1023" step="1" value="512" onchange="ReqPost(this.id,250);"/></td></tr>
-		</table>
-		<br></br>
-		<table>
-			<tr><td><p><b>Soffit</b>&nbsp;&nbsp;</p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="bSfl" checked onchange='OnOff(this.id,"iSfl");PostXml(this.id);'>
-			<label class="sw-label" for="bSfl"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
-			<td width="90%"><input id="iSfl" type="range" min="1" max="1023" step="1" value="512" onchange="ReqPost(this.id,250);"/></td></tr>
-		</table>
-		<table>
-			<tr><td><p><b>Night</b>&nbsp;&nbsp;</p><b>light</b></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="bNgl" checked onchange='OnOff(this.id,"iNgl","T2");PostXml(this.id);'>
-			<label class="sw-label" for="bNgl"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td>
-			<td width="90%"><input id="iNgl" type="range" min="1" max="1023" step="1" value="512" onchange="ReqPost(this.id,250);"/></td></tr>
-		</table>
-		<table id="T2">
-		<tr><td/><td><p><b>Time out</b></p></td><td><p><b>Fade out effect</b></p></td></tr>
-		<tr><td/><td><select id="iNtm" onchange="PostXml(this.id);"><option value="3600">one hour</option><option value="180">3 min.</option><option value="300">5 min.</option>
-		<option value="900">15 min.</option><option value="1800">30 min.</option></select></td><td/><td><div class="sw" ><input type="checkbox" name="sw" class="sw-ch"  id="bNfd" onchange='PostXml(this.id);'>
-		<label class="sw-label" for="bNfd"><span class="sw-inner"></span><span class="sw-switch"></span></label></div></td></tr>
-		</table>
-        </div>
-      </section>
-	  <section id="gesture">
-        <h1><a href="#gesture">
-		  <svg id="L3" enable-background="new 0 0 10 10" viewBox="0 0 500 500" x="0px" y="0px" width="70px" height="40px"><g fill="SkyBlue">
-				<path d="M441,210c-11,0-21,4-29,10v-153c0-27-21-48-48-48 c-11,0-23,4-32,11C324,11,307,0,288,0c-21,0-38,13-44,31	c-8-8-19-11-32-11c-27,0-48,21-48,48V237c-38-34-80-61-107-34 c-38,38,42,113,103,226c44,78,105,107,166,107
-				c90,0,163-73,163-163 v-115C489,231,468,210,441,210z M470,300v73c0,78-65,143-143,143c-73,0-115-40-149-96c-75-126-128-184-107-205c21-21,72.675,24.863,112.837,66.938 V67c0-15,13-29,29-29s29,13,29,29V268h19V48
-				c0-15,13-29,29-29 c15,0,29,13,29,29 v201V420.75l-61.201-61.2l-15.3,13.388L326,459l86-86-15-15 l-61,63V249V67c0-15,13-29,29-29c15,0,29,13,29,29V268h19v-10 c0-15,13-29,29-29c15,0,29,13,29,29V300z"/></g></svg>
-          <span>GESTURE</span></a></h1>
-        <div>
-         <table>
-            <tr><td><p><b>Sensitivity</b><input id="iSen" type="range"   min="1" value="10"  onchange="ReqPost(this.id);"/></p></td>
-            <td><p><b>Await</b><input id="iEnd" type="range"  min="10" max="200" step="5" value="50"  onchange="ReqPost(this.id);"/></p></td></tr>
-			<tr><td><select id="iMup" onchange="PostXml(this.id);"><option value="0">UP: Switch Off</option><option value="1">UP: Switch On</option><option value="-1">UP: None</option></select></td>
-				<td><select id="iMhk" onchange="PostXml(this.id);"><option value="-1">HOOK: None</option><option value="1">HOOK: Switch On</option><option value="0">HOOK: Switch Off</option></select></td>
-				<td><select id="iMdn" onchange="PostXml(this.id);"><option value="1">DN: Switch On</option><option value="0">DN: Switch Off</option><option value="-1">DN: None</option></select></td>
-			</tr>
-         </table>
-         </div>
-      </section>
-    </div>
+ <div id="Log" class="acd">
+  <section id="wifi"><h1><a href="#wifi">
+   <svg id="L1"  viewBox="0 0 400 400" ><g id="IcoLog">
+	<path " d="M331,174c-30-19-66-30-103-30 c-37,0-73,10-103,30c-29,19-52,46-63,77c-2,6,1,13,7,15c6,2,13-1,15-7c20-54,77-91,143-91c66,0,124,36,143,91 c2,5,6,8,11,8c1-0,3-0,4-1c6-2,9-9,7-15 C383,220,361,193,331,174z"/>
+	<path " d="M291,236c-17-14-39-21-63-21 c-23,0-46,8-63,21c-17,14-28,33-30,54c-1,7,4,12,11,13c0,0,1,0,1,0c6,0,11-5,12-11c3-30,33-54,69-54 c36,0,66,24,69,54c1,7,6,11,13,11c7-1,11-6,11-13 C319,270,308,250,291,236z"/>
+	<path " d="M228,280c-25,0-46,21-46,46c0,25,21,46,46,46 c25,0,46-21,46-46C274,300,253,280,228,280z M228,348c-12,0-22-10-22-22c0-12,10-22,22-22c12,0,22,10,22,22 C250,338,240,348,228,348z"/></g></svg>
+   <span>Wi-Fi</span></a></h1>
+   <div>
+	<table>
+	<tr><td/><td class="sst">TO CONNECT</td><td class="sap">FOR CLIENTS</td></tr>
+	 <tr><td><b>SSID</b></td><td class="sst"><input id=sSid type=text onchange ="PostXml(this.id);" /></td><td class="sap"><input id=sAid type=text onchange ="PostXml(this.id);" /></td><td></td></tr>
+	 <tr><td><b>Password</b></td><td class="sst"><input id=sPsw type=password onchange ="PostXml(this.id);" /></td><td class="sap"><input id=sAps type=password onchange ="PostXml(this.id);" /></td><td></td></tr>
+	 <tr><td>&nbsp;</td></tr><tr><td><b>Log</b></td><td><b>Mode</b></td><td><b>PHY</b></td><td><b>Sleep</b></td></tr>
+	 <tr><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="SW1" checked onchange='OnOff(this.id,"STATUS","T0");'>
+	 <label class="sw-lb" for="SW1"><span class="sw-in"></span><span class="sw-switch"></span></label></div></td>
+	 <td><select id="iMod" onchange="SwapTab(this.value);PostXml(this.id);"><option value="1">STATION</option><option selected value="2">WAP</option><option value="3">STATION+WAP</option></select></td>
+	 <td><select id="iPhy" onchange="PostXml(this.id);"><option value="1">802.11b</option><option value="2">802.11g</option><option selected value="3">802.11n</option></select></td>
+	 <td><select id="iSlp" onchange="PostXml(this.id);"><option value="0">DISSABLE</option><option value="1">STANDBY</option><option value="2">SNOOZE</option></select></td></tr>
+	 <tr><td><br/><b>Default page</b></td><td colspan="2"><input id=sSid type=text value="index.html" onchange ="PostXml(this.id);" /></td><td></td></tr>
+	</table><br/>
+	<table id="T0"><tr><td><TEXTAREA  id="LogBuf" NAME="Log" ROWS=10 COLS=99 style="width: 99%;" ondblclick="this.innerHTML='';">To clear log list just double click, here...</TEXTAREA></td></tr></table>
+   </div></section>
+  <section id="setup"><h1><a href="#setup">
+   <svg id="L2"  viewBox="0 0 75 75" ><g>
+    <path d="M68,22V8c0-2-2-4-4-4c-2,0-4,2-4,4v13 c-3,1-5,5-5,8c0,4,2,7,5,8v27c0,2,2,4,4,4 c2,0,4-2,4-4V38c3-1,5-5,5-8C73,26,71,23,68,22z M13,16V8c0-2-2-4-4-4c-2,0-4,2-4,4v8C2,18,0,21,0,24 c0,4,2,7,5,8v32c0,2,2,4,4,4
+	c2,0,4-2,4-4V33c3-1,5-5,5-8C18,21,16,18,13,16z M41,37V8c0-2-2-4-4-4c-2,0-4,2-4,4v28c-3,1-5,5-5,8 c0,4,2,7,5,8v12c0,2,2,4,4,4c2,0,4-2,4-4V53 c3-1,5-5,5-8C46,41,44,38,41,37z"/></g></svg>
+   <span>SETTING</span></a></h1>
+   <div>
+	<table>
+     <tr><td><p><b>Color</b>&nbsp;</p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="bClr" checked onchange='OnOff(this.id,"iClr","T1");PostXml("iClr");'>
+	 <label class="sw-lb" for="bClr"><span class="sw-in"></span><span class="sw-switch"></span></label></div></td>
+	 <td width="90%"><input id="iClr" type="range" min="1" max="8" step="1" value="1" onchange="ReqPost(this.id);"/></td></tr></table>		
+      <table id="T1">
+       <tr><td><p><b>R</b><input id="iRed" type="range" style="background: #ff0000;"onchange="ReqPost(this.id);"/></p></td></tr>
+	   <tr><td><p><b>G</b><input id="iGrn" type="range" style="background: #00ff00;" onchange="ReqPost(this.id);"/></p></td></tr>
+	   <tr><td><p><b>B</b><input id="iBlu" type="range" style="background: #0000ff;" onchange="ReqPost(this.id);"/></p></td></tr></table><br/>
+	<table>
+     <tr><td><p><b>White</b></p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="bWht" checked onchange='OnOff(this.id,"iWht");PostXml("iWht");'>
+	 <label class="sw-lb" for="bWht"><span class="sw-in"></span><span class="sw-switch"></span></label></div></td>
+	 <td width="90%"><input id="iWht" type="range" min="1" max="1023" step="1" value="512" onchange="ReqPost(this.id);"/></td></tr></table><br/>
+	<table>
+	 <tr><td><p><b>Soffit</b>&nbsp;&nbsp;</p></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="bSfl" checked onchange='OnOff(this.id,"iSfl");PostXml("iSfl");'>
+	 <label class="sw-lb" for="bSfl"><span class="sw-in"></span><span class="sw-switch"></span></label></div></td>
+	 <td width="90%"><input id="iSfl" type="range" min="1" max="1023" step="1" value="512" onchange="ReqPost(this.id);"/></td></tr></table>
+	<table>
+	 <tr><td><p><b>Night</b>&nbsp;&nbsp;</p><b>light</b></td><td><div class="sw"><input type="checkbox" name="sw" class="sw-ch" id="bNgl" checked onchange='OnOff(this.id,"iNgl","T2");PostXml("iNgl");'>
+	 <label class="sw-lb" for="bNgl"><span class="sw-in"></span><span class="sw-switch"></span></label></div></td>
+	 <td width="90%"><input id="iNgl" type="range" min="1" max="1023" step="1" value="512" onchange="ReqPost(this.id);"/></td></tr></table>
+	  <table id="T2">
+	   <tr><td/><td><p><b>Time out</b></p></td><td><p><b>Fade out effect</b></p></td></tr>
+	   <tr><td/><td><select id="iNtm" onchange="PostXml(this.id);"><option value="3600">one hour</option><option value="180">3 min.</option><option value="300">5 min.</option>
+	   <option value="900">15 min.</option><option value="1800">30 min.</option></select></td><td/><td><div class="sw" ><input type="checkbox" name="sw" class="sw-ch"  id="bNfd" onchange='PostXml(this.id);'>
+	   <label class="sw-lb" for="bNfd"><span class="sw-in"></span><span class="sw-switch"></span></label></div></td></tr></table>
+   </div></section>
+   <section id="gesture"><h1><a href="#gesture">
+	<svg id="L3" viewBox="0 0 500 500" ><g>
+	 <path d="M441,210c-11,0-21,4-29,10v-153c0-27-21-48-48-48 c-11,0-23,4-32,11C324,11,307,0,288,0c-21,0-38,13-44,31	c-8-8-19-11-32-11c-27,0-48,21-48,48V237c-38-34-80-61-107-34 c-38,38,42,113,103,226c44,78,105,107,166,107
+	 c90,0,163-73,163-163 v-115C489,231,468,210,441,210z M470,300v73c0,78-65,143-143,143c-73,0-115-40-149-96c-75-126-128-184-107-205c21-21,72.675,24.863,112.837,66.938 V67c0-15,13-29,29-29s29,13,29,29V268h19V48
+	 c0-15,13-29,29-29 c15,0,29,13,29,29 v201V420.75l-61.201-61.2l-15.3,13.388L326,459l86-86-15-15 l-61,63V249V67c0-15,13-29,29-29c15,0,29,13,29,29V268h19v-10 c0-15,13-29,29-29c15,0,29,13,29,29V300z"/></g></svg>
+    <span>GESTURE</span></a></h1>
+    <div>
+     <table>
+      <tr><td><p><b>Sensitivity</b><input id="iSen" type="range"   min="1" value="10"  onchange="ReqPost(this.id);"/></p></td>
+      <td><p><b>Await</b><input id="iEnd" type="range"  min="10" max="200" step="5" value="50"  onchange="ReqPost(this.id);"/></p></td></tr>
+	  <tr><td><select id="iMup" onchange="PostXml(this.id);"><option value="0">UP: Switch Off</option><option value="1">UP: Switch On</option><option value="-1">UP: None</option></select></td>
+	  <td><select id="iMhk" onchange="PostXml(this.id);"><option value="-1">HOOK: None</option><option value="1">HOOK: Switch On</option><option value="0">HOOK: Switch Off</option></select></td>
+	  <td><select id="iMdn" onchange="PostXml(this.id);"><option value="1">DN: Switch On</option><option value="0">DN: Switch Off</option><option value="-1">DN: None</option></select></td></tr></table>
+    </div></section>
+   </div>
 </div>
 </body>
 <script type="text/javascript">
-    var Timer,TmpXml='{ "ID": "STATUS", "VALUE": "0" }', DEBUG = Boolean(false), ServerIp = location.host+"/post.cgi";
-    if (DEBUG) ServerIp = "http://www.w3schools.com/ajax/demo_post.asp";
+    var Timer,TmpXml='{ "ID": "STATUS", "VALUE": "0" }', ServerIp = location.host+"/post.cgi";
 	AddText("Connect: JSON service at " + ServerIp);
-	function ReqPost(idn, period) {clearTimeout(Timer);if (period==undefined){period=500;}; Timer=setTimeout(function(){ PostXml(idn);},period);} 
+	function ReqPost(idn, period) {clearTimeout(Timer);if (period==undefined){period=250;}; Timer=setTimeout(function(){ PostXml(idn);},period);} 
     function PostXml(Infocus) {
         var xmlhttp,XmlStr =TmpXml,XmlObj = JSON.parse(XmlStr),Obj;
         if (Infocus) {
             XmlObj.ID = Infocus;
             Obj = document.getElementById(Infocus);
-            if (Obj.type == 'radio' || Obj.type == 'checkbox') {
-                XmlObj.VALUE = Obj.checked;
-            } else {
-                XmlObj.VALUE = Obj.value;
-            }
-        } else {
-            XmlObj = JSON.parse(TmpXml);
-        }
+            if (Obj.type == 'radio' || Obj.type == 'checkbox') {XmlObj.VALUE = Obj.checked;} else {XmlObj.VALUE = Obj.value;};
+        } else {XmlObj = JSON.parse(TmpXml);};
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                if (DEBUG) XmlObj = JSON.parse(XmlStr);
-                if (!DEBUG) XmlObj = JSON.parse(xmlhttp.responseText);
+                XmlObj = JSON.parse(xmlhttp.responseText);
                 Obj = document.getElementById(XmlObj.ID);
-                if (Obj.type == 'radio' || Obj.type == 'checkbox') {
-                    Obj.checked = XmlObj.VALUE;
-                } else {
-                    Obj.value = XmlObj.VALUE;
-                }
+                if (Obj.type == 'radio' || Obj.type == 'checkbox') {Obj.checked = XmlObj.VALUE;} else {Obj.value = XmlObj.VALUE;};
             }
             if (xmlhttp.readyState == 4 && xmlhttp.status != 200) AddText("Error: No submit of JSON(" + xmlhttp.status + ")");
         }
@@ -187,35 +153,38 @@ box-shadow: inset 0 0 5px rgba(000,000,000, 0.5);}
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function () {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                if (DEBUG) XmlReqObj = JSON.parse(XmlStr);
-                if (!DEBUG) XmlReqObj = JSON.parse(xmlhttp.responseText);
+                XmlReqObj = JSON.parse(xmlhttp.responseText);
                 Obj = document.getElementById(XmlReqObj.ID);
-                if (Obj.type == 'radio' || Obj.type == 'checkbox') {
-                    Obj.checked = XmlReqObj.VALUE;
-                } else {
-                    Obj.value = XmlReqObj.VALUE;
-                }
+                if (Obj.type == 'radio' || Obj.type == 'checkbox') {Obj.checked = XmlReqObj.VALUE;} else {Obj.value = XmlReqObj.VALUE;};
             }
         }
-        if (!DEBUG) xmlhttp.open("GET", ServerIp, true);
-        if (DEBUG) xmlhttp.open("GET", "http://www.w3schools.com/ajax/demo_get.asp", true);
+        xmlhttp.open("GET", ServerIp, true);
         XmlStr = JSON.stringify(XmlReqObj);
         XmlStatus = 0;
         xmlhttp.send(XmlStr);
     }
 	 function AddText(StrText) {
-        var PCday = new Date(); Obj = document.getElementById("LogBuf")
+        var PCday = new Date(); Obj = document.getElementById("LogBuf");
         Obj.innerHTML = PCday.getHours() + ":" + PCday.getMinutes()+ ":" + PCday.getSeconds() + "." + PCday.getMilliseconds() + " " + StrText + "\r\n" + Obj.innerHTML;
     }
 	function OnOff(Infocus,Tag,Tab) {
 		Obj = document.getElementById(Infocus);Obj1 = document.getElementById(Tag);
 		if (Obj.checked==true){Obj1.min=1;}else{Obj1.min=0;};
-
 		Obj1.value=Obj1.min;Obj1.disabled=!Obj.checked;
 		if (!(Tab==undefined)){
 			Obj1 = document.getElementById(Tab);
 			if (Obj.checked==true){Obj1.style.display="table";}else{Obj1.style.display="none";};		
 		}
     }
+	function SwapTab(v) {
+	    var Obj = document.getElementsByClassName("sap");Obj1 = document.getElementsByClassName("sst"); 
+		var i;
+        for (i = 0; i < Obj.length; i++) {
+         Obj[i].style.display = "table-cell";
+		 Obj1[i].style.display = "table-cell";
+		 if (v==2)  {Obj[i].style.display = "none";};
+		 if (v==1)  {Obj1[i].style.display = "none";};
+    }
+}
 </script>
 </html>
